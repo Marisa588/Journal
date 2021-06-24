@@ -9,28 +9,30 @@ const validateJWT = async (req, res, next) => {
         req.headers.authorization.includes("Bearer")
     ) {
         const { authorization } = req.headers;
+        console.log(authorization);
         const payload = authorization
-        ? jwt.verify( 
+        ? jwt.verify(
             authorization.includes("Bearer")
             ? authorization.split(" ")[1]
             : authorization,
             process.env.JWT_SECRET
         )
-        : undefinded;
+        : undefined;
+        console.log(payload);
 
         if (payload) {
             let foundUser = await UserModel.findOne({ where: { id: payload.id } });
-
+            console.log(foundUser);
             if (foundUser) {
                 req.user = foundUser;
                 next();
             } else {
                 res.status(400).send({ message: "Not Authorized" });
-            }    
-        } else {
+            }
+        }else {
             res.status(401).send({ message: "Invalid token" });
-            } 
-    }else {
+        }
+    } else {
         res.status(403).send({ message: "Forbidden" });
     }
 };
