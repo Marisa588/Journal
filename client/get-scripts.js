@@ -117,6 +117,8 @@ function displayMine() {
                  let header = document.createElement('h5');
                  let subtitle = document.createElement('h6');
                  let para = document.createElement('p');
+                 let editBtn = document.createElement('button');
+                 let deleteBtn = document.createElement('button');
 
 
 
@@ -128,7 +130,8 @@ function displayMine() {
                  header.textContent = title;
                  subtitle.textContent = date;
                  para.textContent = entry;
-
+                 editBtn.textContent = "Edit";
+                 deleteBtn.textContent = "Delete";
 
 
                  display.appendChild(card);
@@ -200,7 +203,9 @@ function displayMine() {
                 let body = document.createElement('div');
                 let header = document.createElement('h5');
                 let subtitle = document.createElement('h6');
-                let para = createElement('p');
+                let para = document.createElement('p');
+                let editBtn = document.createElement('button');
+                let deleteBtn = document.createElement('button');
 
 
 
@@ -212,7 +217,8 @@ function displayMine() {
                 header.textContent = title;
                 subtitle.textContent = date;
                 para.textContent = entry;
-
+                editBtn.textContent = "Edit";
+                deleteBtn.textContent = "Delete";
 
 
                 display.appendChild(card);
