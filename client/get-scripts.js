@@ -98,7 +98,7 @@ function displayMine() {
          console.log(data);
 
          let display = document.getElementById('journals');
-         for (i = 0; i = display.childNodes.length; i++){
+         for (i = 0; i = display.childNodes.length; i++) {
              display.removeChild(display.firstChild)
          }
 
@@ -112,11 +112,11 @@ function displayMine() {
          } else {
              for(i = 0; i < data.length; i++){
                  let display = document.getElementById('journals');
-                 let card = document.getElementById('div');
-                 let body = document.getElementById('div');
-                 let header = document.getElementById('h5');
-                 let subtitle = document.getElementById('h6');
-                 let para = document.getElementById('p');
+                 let card = document.createElement('div');
+                 let body = document.createElement('div');
+                 let header = document.createElement('h5');
+                 let subtitle = document.createElement('h6');
+                 let para = document.createElement('p');
 
 
 
